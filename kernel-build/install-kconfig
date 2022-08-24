@@ -19,6 +19,9 @@ do
 	--blktests)
 	    DO_BLKTESTS=yes
 	    ;;
+	--bpfcc-tools)
+	    DO_BPFCC_TOOLS=yes
+	    ;;
 	--i386)
 	    ARCH=i386
 	    ;;
@@ -122,6 +125,10 @@ FILES=("$CONFIG_FN")
 
 if test -n "$DO_BLKTESTS" ; then
     FILES+=("$KCONFIG_DIR/blktests-configs")
+fi
+
+if test -n "$DO_BPFCC_TOOLS" ; then
+    FILES+=("$KCONFIG_DIR/bpfcc-tools-configs")
 fi
 
 if test -n "$DO_DEBUG" ; then
